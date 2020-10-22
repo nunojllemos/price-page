@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400,700&display=swap");
+/* variables */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #e3e3e3;
+}
+
+/* header */
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.switch {
+  width: 44px;
+  height: 26px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+  background-image: linear-gradient(90deg, #a3a8f0, #696fdd);
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.switch-circle {
+  width: 20px;
+  height: 20px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  margin-left: 3px;
+}
+
+/* main */
+main {
+  width: 100%;
+}
+
+main section {
+  width: 90%;
+  max-width: 320px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main section ul {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main section ul .plan-title {
+  font-size: 1rem;
+  padding: 25px 0;
+}
+
+main section ul .price {
+  text-align: center;
+  width: 100%;
+  font-size: 4.5rem;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #a8a8a8;
+}
+
+main section ul .price .dollar {
+  vertical-align: middle;
+  font-size: 2.5rem;
+}
+
+main section ul .plan-property {
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-bottom: 1px solid #a8a8a8;
+}
+
+main section ul .btn-learn {
+  margin: 25px 0;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .1rem;
+  background-image: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+  background-image: linear-gradient(90deg, #a3a8f0, #696fdd);
+}
+
+section:nth-child(2) {
+  background-image: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+  background-image: linear-gradient(90deg, #a3a8f0, #696fdd);
+}
+
+section:nth-child(2) ul {
+  color: #ffffff;
+}
+
+section:nth-child(2) ul .price,
+section:nth-child(2) ul .plan-property {
+  border-bottom: 1px solid #ececec;
+}
+
+section:nth-child(2) ul .btn-learn {
+  background-image: none;
+  background-color: #ffffff;
+  color: #696fdd;
+}
+/*# sourceMappingURL=style.css.map */
