@@ -3,6 +3,16 @@
 /* variables */
 $color1: hsl(236, 72%, 79%)
 $color2: hsl(237, 63%, 64%)
+$bg-color: #cacbcc
+$light-gray: #ececec
+$dark-gray: #7e7e7e
+$gradient1: linear-gradient(90deg, $color1, $color2)
+
+/* mixins */
+@mixin flex-center()
+  display: flex
+  justify-content: center
+  align-items: center
 
 *
   margin: 0
@@ -12,35 +22,47 @@ $color2: hsl(237, 63%, 64%)
 body
   font-family: 'Montserrat'
   font-weight: 400
-  display: flex
   flex-direction: column
-  align-items: center
-  background-color: #e3e3e3
+  background-color: $bg-color
 
 /* header */
 
 header
-  display: flex
   flex-direction: column
   align-items: center
+  @include flex-center()
+  h2
+    margin: 50px 0 35px 0
+    font-size: 1.6rem
   ul
-    display: flex
-    align-items: center
+    @include flex-center()
+    .year
+      color: $color2
+      transition: all .75s
+    .month
+      transition: all .75s
+  li
+    margin: 0 10px
+    font-size: .8rem
+    font-weight: 700
+    color: $dark-gray
 
 .switch
-  width: 44px
+  width: 46px
   height: 26px
-  background-image: linear-gradient(90deg, $color1, $color2)
+  background-image: $gradient1
   border-radius: 20px
   display: flex
   align-items: center
-
-.switch-circle
-  width: 20px
-  height: 20px
-  background-color: #f1f1f1
-  border-radius: 10px
-  margin-left: 3px
+  &-circle
+    position: relative
+    width: 20px
+    height: 20px
+    background-color: $light-gray
+    border-radius: 10px
+    margin-left: 3px
+    left: 1px
+    transition: left .75s
 
 /* main */
 
@@ -50,16 +72,14 @@ main
     width: 90%
     max-width: 320px
     margin: 40px auto
-    background-color: #ffffff
+    background-color: white
     border-radius: 10px
-    display: flex
     flex-direction: column
-    align-items: center
+    @include flex-center()
     ul
       width: 80%
-      display: flex
       flex-direction: column
-      align-items: center
+      @include flex-center()
       .plan-title
         font-size: 1rem
         padding: 25px 0
@@ -80,19 +100,24 @@ main
         font-weight: 700
         border-bottom: 1px solid #a8a8a8
       .btn-learn
+        border: 1px solid transparent
         margin: 25px 0
-        padding: 10px
+        padding: 13px
         width: 100%
-        border: none
-        border-radius: 7px
+        border-radius: 4px
         color: white
         font-size: .7rem
         font-weight: 700
         letter-spacing: .1rem
-        background-image: linear-gradient(90deg, $color1, $color2)
-
+        background-image: $gradient1
+        cursor: pointer
+        &:hover
+          background-color: $light-gray
+          background-image: none
+          border: 1px solid $color2
+          color: $color2
 section:nth-child(2)
-  background-image: linear-gradient(90deg, $color1, $color2)
+  background-image: $gradient1
   ul
     color: #ffffff
     .price,
@@ -102,3 +127,17 @@ section:nth-child(2)
       background-image: none
       background-color: #ffffff
       color: $color2
+      &:hover
+        background-image: $gradient1
+        border: 1px solid $light-gray
+        color: $light-gray
+
+// .switch-circle:hover
+//   animation: move .5s
+//   animation-iteration-count: 1
+
+// @keyframes move
+//   0%
+//     left: 0
+//   100%
+//     left: 20px

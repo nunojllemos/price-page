@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400,700&display=swap");
 /* variables */
+/* mixins */
 * {
   margin: 0;
   padding: 0;
@@ -9,24 +10,15 @@
 body {
   font-family: 'Montserrat';
   font-weight: 400;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #e3e3e3;
+  background-color: #cacbcc;
 }
 
 /* header */
 header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -34,19 +26,52 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  align-items: center;
+}
+
+header h2 {
+  margin: 50px 0 35px 0;
+  font-size: 1.6rem;
 }
 
 header ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
+header ul .year {
+  color: #696fdd;
+  -webkit-transition: all .75s;
+  transition: all .75s;
+}
+
+header ul .month {
+  -webkit-transition: all .75s;
+  transition: all .75s;
+}
+
+header li {
+  margin: 0 10px;
+  font-size: .8rem;
+  font-weight: 700;
+  color: #7e7e7e;
+}
+
 .switch {
-  width: 44px;
+  width: 46px;
   height: 26px;
   background-image: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
   background-image: linear-gradient(90deg, #a3a8f0, #696fdd);
@@ -60,11 +85,15 @@ header ul {
 }
 
 .switch-circle {
+  position: relative;
   width: 20px;
   height: 20px;
-  background-color: #f1f1f1;
+  background-color: #ececec;
   border-radius: 10px;
   margin-left: 3px;
+  left: 1px;
+  -webkit-transition: left .75s;
+  transition: left .75s;
 }
 
 /* main */
@@ -76,15 +105,18 @@ main section {
   width: 90%;
   max-width: 320px;
   margin: 40px auto;
-  background-color: #ffffff;
+  background-color: white;
   border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -92,13 +124,16 @@ main section {
 
 main section ul {
   width: 80%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -132,17 +167,25 @@ main section ul .plan-property {
 }
 
 main section ul .btn-learn {
+  border: 1px solid transparent;
   margin: 25px 0;
-  padding: 10px;
+  padding: 13px;
   width: 100%;
-  border: none;
-  border-radius: 7px;
+  border-radius: 4px;
   color: white;
   font-size: .7rem;
   font-weight: 700;
   letter-spacing: .1rem;
   background-image: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
   background-image: linear-gradient(90deg, #a3a8f0, #696fdd);
+  cursor: pointer;
+}
+
+main section ul .btn-learn:hover {
+  background-color: #ececec;
+  background-image: none;
+  border: 1px solid #696fdd;
+  color: #696fdd;
 }
 
 section:nth-child(2) {
@@ -163,5 +206,12 @@ section:nth-child(2) ul .btn-learn {
   background-image: none;
   background-color: #ffffff;
   color: #696fdd;
+}
+
+section:nth-child(2) ul .btn-learn:hover {
+  background-image: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+  background-image: linear-gradient(90deg, #a3a8f0, #696fdd);
+  border: 1px solid #ececec;
+  color: #ececec;
 }
 /*# sourceMappingURL=style.css.map */
