@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400,700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap')
+@import './_utilities.sass'
 
 /* variables */
 $color1: hsl(236, 72%, 79%)
@@ -6,13 +7,9 @@ $color2: hsl(237, 63%, 64%)
 $bg-color: #cacbcc
 $light-gray: #ececec
 $dark-gray: #7e7e7e
+$red: #e74c3c
 $gradient1: linear-gradient(90deg, $color1, $color2)
-
-/* mixins */
-@mixin flex-center()
-  display: flex
-  justify-content: center
-  align-items: center
+$font: 'Montserrat'
 
 *
   margin: 0
@@ -20,10 +17,12 @@ $gradient1: linear-gradient(90deg, $color1, $color2)
   list-style: none
 
 body
-  font-family: 'Montserrat'
+  font-family: $font
   font-weight: 400
   flex-direction: column
-  background-color: $bg-color
+  // background-color: $bg-color
+  background-color: #b8c6db
+  background-image: linear-gradient(245deg, #b8c6db 0%, #f5f7fa 74%)
 
 /* header */
 
@@ -31,7 +30,7 @@ header
   flex-direction: column
   align-items: center
   @include flex-center()
-  h2
+  h1
     margin: 50px 0 35px 0
     font-size: 1.6rem
   ul
@@ -68,7 +67,7 @@ header
 
 main
   width: 100%
-  section
+  .card
     width: 90%
     max-width: 320px
     margin: 40px auto
@@ -81,6 +80,7 @@ main
       flex-direction: column
       @include flex-center()
       .plan-title
+        text-align: center
         font-size: 1rem
         padding: 25px 0
       .price
@@ -88,7 +88,7 @@ main
         width: 100%
         font-size: 4.5rem
         padding-bottom: 20px
-        border-bottom: 1px solid #a8a8a8
+        transition: opacity .75s
         .dollar
           vertical-align: middle
           font-size: 2.5rem
@@ -99,6 +99,10 @@ main
         font-size: 0.9rem
         font-weight: 700
         border-bottom: 1px solid #a8a8a8
+        &:nth-child(3)
+          border-top: 1px solid #a8a8a8
+      li
+        width: 100%
       .btn-learn
         border: 1px solid transparent
         margin: 25px 0
@@ -116,13 +120,14 @@ main
           background-image: none
           border: 1px solid $color2
           color: $color2
-section:nth-child(2)
+.card:nth-child(2)
   background-image: $gradient1
   ul
     color: #ffffff
     .price,
     .plan-property
-      border-bottom: 1px solid #ececec
+      &:nth-child(3)
+        border-top: 1px solid #ececec
     .btn-learn
       background-image: none
       background-color: #ffffff
@@ -132,12 +137,15 @@ section:nth-child(2)
         border: 1px solid $light-gray
         color: $light-gray
 
-// .switch-circle:hover
-//   animation: move .5s
-//   animation-iteration-count: 1
+footer
+  text-align: center
+  font-size: .7rem
+  a
+    text-decoration: none
+    color: $red
+    cursor: pointer
+  #heart
+    color: $red
+    font-size: .9rem
 
-// @keyframes move
-//   0%
-//     left: 0
-//   100%
-//     left: 20px
+@import './_queries.sass'
